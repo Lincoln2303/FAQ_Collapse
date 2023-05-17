@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>FAQ Collapse</title>
+</head>
+<body>
+    <h1>Frequently Asked Questions</h1>
+    <!-- I.01. We start out with a container: -->
+    <div class="faq-container">
+        <!-- I.02. Inside here we're going to have the faq divs: (NOTE: Whichever is showing the answer has class active) -->
+        <!-- NOTE: Keep it in mind that here we can have more with active class at one time -->
+        <div class="faq active">
+            <!-- I.03. Here we add an h3 with a title class: -->
+            <h3 class="faq-title">
+                Why shouldn't we trust atoms?
+            </h3>
+            <!-- I.04. And a paragraph with an faq-text:-->
+            <p class="faq-text">
+                They make up everything
+            </p>
+            <!-- I.05. And a button: (NOTE:; For both expanding and closing it!) -->
+            <button class="faq-toggle">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <!-- I.06. We add 4 more copies of these: -->
+        <!-- AFTER: We're moving to our css (I.07.) -->
+        <div class="faq">
+            <h3 class="faq-title">
+                What do you call someone with no body, and no nose?
+            </h3>
+            <p class="faq-text">
+                Nobody knows.
+            </p>
+            <button class="faq-toggle">
+                    <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="faq">
+            <h3 class="faq-title">
+                What's an object-oriented way to become wealthy?
+            </h3>
+            <p class="faq-text">
+                Inheritance.
+            </p>
+            <button class="faq-toggle">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="faq">
+            <h3 class="faq-title">
+                How many tickles does it take to tickle an octopus?
+            </h3>
+            <p class="faq-text">
+                Ten-tickles.
+            </p>
+            <button class="faq-toggle">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="faq">
+            <h3 class="faq-title">
+                What i  s: 1 + 1?
+            </h3>
+            <p class="faq-text">
+                Depends on who are you asking.
+            </p>
+            <button class="faq-toggle">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli ', sans-serif;
+    background-color: #f0f0f0;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; */
+    /* NOTE: We use "overflow" on hidden, because we don't want scroll bars to be shown by default */
+    /* overflow: hidden; */
+    /* margin: 0; */
+}
+
+/* I.07. After some adjustments in body, we're styling the h1: */
+h1 {
+    margin: 50px 0 30px;
+    text-align: center;
+}
+
+/* I.08. Styling the faq-container: */
+.faq-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* I.09. Styling each faq class: */
+.faq {
+    background-color: transparent;
+    border: 1px solid #9fa4a8;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 30px;
+    /* NOTE: We're going to position this relative, so we can position things inside absolute */
+    position: relative;
+    /* NOTE: Let's add overflow: hidden => So nothing comes out of the container */
+    overflow: hidden;
+    /* NOTE: We're adding a transition for expanding, and collapsing */
+    transition: 0.3s ease;
+}
+
+/* I.10. Styling class faq, when active: */
+.faq.active {
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* I.11. We're going to use fontawesome comment icon: (NOTE: As a background when it's active) */
+.faq.active::before,
+.faq.active::after {
+    /* Testing: */
+    /* content: 'Hello'; */
+    /* I.12. We're going to add the "unicode" of the icon to the content: */
+    content: '\f075';
+    /* NOTE: We have to include this font-family (anyway won't show) */
+    font-family: 'Font Awesome 5 Free';
+    color: #2ecc71;
+    font-size: 7rem;
+    position: absolute;
+    opacity: 0.2;
+    /* NOTE: We're positioning both ::before and ::after the same place, but then we grab one of that and move it */
+    top: 20px;
+    left: 20px;
+    /* NOTE: By setting z-index to 0 we make sure that it's behind everything */
+    z-index: 0;
+}
+
+/* I.13. We're styling the ::before separately: */
+.faq.active::before {
+    color: #3498db;
+    top: -10px;
+    left: -30px;
+    transform: rotateY(180deg);
+}
+
+/* I.14. Styling the .faq title: */
+.faq-title {
+    margin: 0 35px 0;
+}
+
+/* I.15. Styling .faq text: */
+/* NOTE: We don't want this to show until it has the active class => So we display it none! */
+.faq-text {
+    display: none;
+    margin: 30px 0 0;
+}
+
+/* I.16. Styling .faq text with active class: */
+/* NOTE: When we will click this is going to show the answer */
+/* AFTER: Setting up javascript in the next section (section II.)  */
+.faq.active .faq-text {
+    display: block;
+} 
+
+/* II.01. First we're adding styles to the .toggle class on button: */
+.faq-toggle {
+    background-color: transparent;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 0;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 30px;
+    width: 30px;
+}
+
+/* II.05. We get rid of the outline on the button: */
+.faq-toggle:focus {
+    outline: 0 ;
+}
+
+/* II.02. We're setting the x icon to display none: */
+/* NOTE: We can just select it by the icon's class */
+.faq-toggle .fa-times {
+    display: none;
+}
+
+/* II.03. We're displaying the x icon, if we have the active class: */
+.faq.active .faq-toggle .fa-times {
+    display: block;
+    color: #fff;
+}
+
+/* II.04. Now, we have to remove the chevron icon, if it has active class: */
+.faq.active .faq-toggle .fa-chevron-down {
+    display: none;
+}
+
+/* II.06. We're setting up a bg-color for the active toggle */
+/* AFTER: We're doing the javascript (II.07.) */
+.faq.active .faq-toggle {
+    background-color: #9fa4a8;
+}
+
+
